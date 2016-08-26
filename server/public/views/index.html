@@ -11,20 +11,15 @@
 </head>
 <body ng-app="myApp">
     <h1>Data APIs!</h1>
-    <div class="container" ng-controller="APIController">
+
+    <div class="container" ng-controller="petController">
       <div class="col-md-6">
-        <button ng-click="getRandomPet()">Find Random Pet</button>
-        <h2>{{animal.name.$t}}</h2>
-        <p>{{animal.description.$t}}</p>
-        id {{animal.media.photos.photo[0]['@id']}}
+        <button ng-click="getRandomPet()">Random Pet</button>
       </div>
       <div class="col-md-6">
-        <input type="text" ng-model="breed" placeholder="Enter animal type" />
-        <button ng-click="getBreeds()">Get Breeds</button>
-        <h2 ng-if="breeds != undefined">Breeds of {{breed}}</h2>
-        <ul>
-          <li ng-repeat="frodo in breeds">{{frodo.$t}}</li>
-        </ul>
+        <h2>{{pet.name.$t}}</h2>
+        <p>{{pet.description.$t}}</p>
+        <img ng-src="{{pet.media.photos.photo[2].$t}}" />
       </div>
     </div>
 </body>
