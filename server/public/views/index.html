@@ -2,25 +2,23 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Data APIs!</title>
+    <title>Pet Roulette</title>
     <link rel="stylesheet" href="/vendors/bootstrap.min.css" />
     <link rel="stylesheet" href="/styles/style.css" />
     <!-- Angular -->
     <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
     <script type="text/javascript" src="/scripts/ang_app.js"></script>
 </head>
 <body ng-app="myApp">
-    <h1>Data APIs!</h1>
+  <div class="jumbotron text-center">
+    <h1>Pet Roulette!</h1>
+  </div>
 
-    <div class="container" ng-controller="petController">
-      <div class="col-md-6">
-        <button ng-click="getRandomPet()">Random Pet</button>
-      </div>
-      <div class="col-md-6">
-        <h2>{{pet.name.$t}}</h2>
-        <p>{{pet.description.$t}}</p>
-        <img ng-src="{{pet.media.photos.photo[2].$t}}" />
-      </div>
-    </div>
+  <div ng-include="'/views/nav.html'"></div>
+
+  <main ng-view></main>
+
+
 </body>
 </html>
