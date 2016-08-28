@@ -12,12 +12,29 @@
 </head>
 <body ng-app="myApp">
   <div class="jumbotron text-center">
-    <h1>Pet Roulette!</h1>
+    <h1>Pick a Pet</h1>
   </div>
 
-  <div ng-include="'/views/nav.html'"></div>
+  <div ng-controller="pickController">
+    <form name="petChooser">
+      <label for="petChooser">Pick a pet type:</label>
+      <select ng-model="pet" ng-options="pet.name for pet in petOptions" ng-change="changedValue(pet)">
+        <option value="">---Please select---</option>
+      </select>
+    </form>
+    <div id="favorites" ng-controller="favController">
+      <button ng-click="showFavorites">View Favorites</button>
+    </div>
 
-  <main ng-view></main>
+    <div ng-include="'/views/partials/pet.html'"></div>
+
+    <main ng-view></main>
+
+  </div>
+
+  <!-- <div ng-include="'/views/nav.html'"></div>
+
+  <main ng-view></main> -->
 
 
 </body>

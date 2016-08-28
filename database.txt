@@ -1,0 +1,6 @@
+CREATE TABLE pet_favorites (
+pet_id SERIAL PRIMARY KEY,
+pet_name varchar(50),
+img_URL varchar(100),
+description varchar(100)
+);

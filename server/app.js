@@ -1,6 +1,14 @@
 var express = require("express");
 var app = express();
 var path = require('path');
+var bodyParser = require('body-parser');
+var favorites = require('./routes/favorites')
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
+//routes
+app.use('/favorites', favorites);
 
 // Serve back static files
 app.use(express.static(path.join(__dirname, './public')));
