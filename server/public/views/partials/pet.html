@@ -1,9 +1,22 @@
-<div class="container">
-  <div class="col-md-4">
-    <img class="img-responsive" ng-src="{{pet.media.photos.photo[2].$t}}" />
-  </div>
-  <div class="col-md-8">
-    <h2>{{pet.name.$t}}</h2>
-    <p>{{pet.description.$t}}</p>
-  </div>
+<div>
+  <form name="petChooser">
+    <label for="petChooser">Pick a pet type:</label>
+    <select ng-model="pet" ng-options="pet.name for pet in petOptions" ng-change="changedValue(pet)">
+      <option value="">---Please select---</option>
+    </select>
+  </form>
+  <button><a href="#/favorites">Show favorites</a></button>
+
+
+
+    <div class="container">
+      <div class="col-md-4">
+        <img class="img-responsive" ng-src="{{animal.media.photos.photo[2].$t}}" />
+      </div>
+      <div class="col-md-8">
+        <h2>{{animal.name.$t}}</h2>
+        <p>{{animal.description.$t}}</p>
+      </div>
+      <button ng-click="postFavorite(pet)">Add to favorites</button>
+    </div>
 </div>

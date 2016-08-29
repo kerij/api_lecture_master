@@ -1,0 +1,18 @@
+
+<div id="favorites">
+    <button ng-click="getFavorites()">View Favorites</button>
+    <button><a href="#/pet">Go back to Pet Viewer</a></button>
+    <div >
+      <h2>Favorites</h2>
+        <ul ng-repeat="pet in favorites" class="list-group">
+          <li class="list-group-item">
+            {{pet.pet_name}}
+            {{pet.description}}
+            {{pet.img_URL}}
+          </li>
+        </ul>
+        <div>
+          Number of favorites: {{numOfFavs}}
+        </div>
+    </div>
+  </div>
